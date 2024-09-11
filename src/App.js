@@ -7,7 +7,7 @@ import { Container, Row, Col, ListGroup, Card, Image } from 'react-bootstrap';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 
 const initialItems = [
-  { id: "garys", name: "Gary GoodSpeed", thumb: '/Images/one.webp' },
+  { id: "Samuel", name: "Gary GoodSpeed", thumb: '/Images/one.webp' },
   { id: "starks", name: "Stark GoodSpeed", thumb: '/Images/two.webp' },
   { id: "lucifers", name: "Lucifer", thumb: '/Images/four.avif' },
 ];
