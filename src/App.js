@@ -9,7 +9,7 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 const initialItems = [
   { id: "Samuel", name: "Gary GoodSpeed", thumb: '/Images/one.webp' },
   { id: "stark", name: "Stark GoodSpeed", thumb: '/Images/two.webp' },
-  { id: "lucifers", name: "Lucifer", thumb: '/Images/four.avif' },
+  { id: "lucifer", name: "Lucifer", thumb: '/Images/four.avif' },
 ];
 
 const initialDropZones = [
