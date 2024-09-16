@@ -53,8 +53,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
+  width: 184px;
+  height: 187px;
 }
 
 .chair {
@@ -65,24 +65,30 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
+
+
+
+
 }
 
 .chair:nth-child(2) {
   top: 50%;
   left: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)   rotate( 90deg);
+
+
 }
 
 .chair:nth-child(3) {
   top: 100%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .chair:nth-child(4) {
   top: 50%;
   left: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(270deg);
 }
 
 .chair img {
@@ -104,10 +110,53 @@
 
 
 svg{
-  width: 200px;
+  width: 67px;
   height: 200px;
 }
 
 .drop{
   padding: 0;
+}
+
+.bsImg{
+
+
+  width: 50px;
+}
+.TableArea{
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.HallOfChairs{
+
+  display: flex;
+
+  flex-direction: row;
+
+  gap: 410px;
+}
+
+
+.Screen{
+
+border: solid 3px black;
+height: 100px;
+width: 700px;
+
+  position: relative;
+
+  bottom: 290px;
+
+border-color: #000 #000 #000;
+border-top-left-radius: 100px;
+border-top-right-radius: 100px;
+
+border-top-width: 40px
+
+/* border-top-right-radius: 100px; */
+
 }
