@@ -1,36 +1,113 @@
-
-
-
-
-
-
-.employees{
-  padding: 10px;
-  text-align: left;
-  border: 2px solid white;
-  margin: 20px;
-  cursor: pointer;
-}
-
-.employees:hover{
-  transform: scale(1.1);
-  transition: 0.1s;
-}
-
-.MainDropAreaZone{
-
-  border: solid 3px ;
-
-
-  background-color: rgb(106, 57, 57);
-
-  border-radius: 1000px;
-
-
-}
-
-
-.Home{
-
+.AppContainer {
   display: flex;
+  height: 100vh;
+}
+
+.EmployeeSidebar {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.EmployeeList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.employees {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.employees:hover {
+  transform: scale(1.05);
+}
+
+.TableArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.RoundTable {
+  position: relative;
+}
+
+.ChairsAroundTable {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+}
+
+.chair {
+  position: absolute;
+}
+
+.chair:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chair:nth-child(2) {
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.chair:nth-child(3) {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chair:nth-child(4) {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.chair img {
+  max-width: 50px;
+  transition: transform 0.2s;
+}
+
+.chair img:hover {
+  transform: scale(1.1);
+}
+
+.isDragging {
+  opacity: 0.7;
+}
+
+.draggingOver {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+
+svg{
+  width: 200px;
+  height: 200px;
+}
+
+.drop{
+  padding: 0;
 }

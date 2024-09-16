@@ -10,12 +10,14 @@ const initialItems = [
   { id: "Samuel", name: "Gary GoodSpeed", thumb: '/Images/one.webp' },
   { id: "stark", name: "Stark GoodSpeed", thumb: '/Images/two.webp' },
   { id: "lucifer", name: "Lucifer", thumb: '/Images/four.avif' },
+  { id: "Anand", name: "Anand", thumb: '/Images/four.avif' }
 ];
 
 const initialDropZones = [
   { id: "dropZone1", items: [] },
   { id: "dropZone2", items: [] },
-  { id: "dropZone3", items: [] }
+  { id: "dropZone3", items: [] },
+  { id: "dropZone4", items: [] }
 
 
 
@@ -88,133 +90,73 @@ function App() {
   
 
   return (
-    <div className="App">
-      <DragDropContext onDragEnd={onDragEnd}>
-        <div className="Home">
-    
-
-    <div className="EmplyoeeDivArea">
-    <Droppable droppableId='EmployeeArea' >
-
-{
-
-  (provided)=>(
-
-
-  
-
-    <Col xs={12} md={3} lg={2} className="bg-dark text-white p-3"  ref={provided.innerRef} {...provided.droppableProps}   >
-    <h2 className="text-center">Employees</h2>
-    
-    {dragItems.map((employee, index)=>(
-      <div className=''>
-
-
-<Draggable key={employee.id} draggableId={employee.id} index={index} >
-
-  {
-    (provided)=>(
-      <div className="employees"  ref={provided.innerRef}
-      {...provided.draggableProps}
-      {...provided.dragHandleProps} >
-
-{employee.name}
-      </div>
-     
-
-    )
-  
-  }  
-</Draggable>
-
-       
-      </div>
+<div className="App">
+  <DragDropContext onDragEnd={onDragEnd}>
+    <div className="AppContainer">
       
-    ))}
-
-{provided.placeholder}
-    </Col>
-  
-  )
-}
-
-</Droppable>
-    </div>
-
-
-
-    <div className="EmplyoeeDropArea">
-
-    <Droppable droppableId='MainDropZone'>
-
-{
-
-
-(provided )=>(
-
-
-<div className="MainDropAreaZone"  ref={provided.innerRef} {...provided.droppableProps}  >
-
-  <h1> Choose Chair</h1>
-
-{dropZones.map((zone, index) => (
-
-
-          
-<Droppable   key={zone.id} droppableId={zone.id} >
-{(provided, snapshot) => (
-  <div
-    ref={provided.innerRef}
-    {...provided.droppableProps}
-    className={`dropzone ${snapshot.isDraggingOver ? "dragDrop" : ""}`}
-  >
-    
-    <Container>
-
-
-    <Image src='./img/armchair.png' alt="Chair" fluid style={{ maxWidth: '85px', height: 'auto'}} id='image1'/>
-
-    </Container>
-    <ul className="drop">
-      {zone.items.map((item, index) => (
-        <Draggable key={item.id} draggableId={item.id} index={index}>
-          {(provided, snapshot) => (
-            <div
-              className={`flex ${snapshot.isDragging ? "isDragging" : ""}`}
-              ref={provided.innerRef}
-              {...provided.draggableProps}
-              {...provided.dragHandleProps}
-            >
-              <img src={item.thumb} alt="" />
-              <h1>{item.name}</h1>
+      <div className="EmployeeSidebar">
+        <Droppable droppableId='EmployeeArea'>
+          {(provided) => (
+            <div ref={provided.innerRef} {...provided.droppableProps} className="EmployeeList">
+              <h2>Employees</h2>
+              {dragItems.map((employee, index) => (
+                <Draggable key={employee.id} draggableId={employee.id} index={index}>
+                  {(provided) => (
+                    <div className="employees" ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}>
+                      {employee.name}
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
             </div>
           )}
-        </Draggable>
-      ))}
-      {provided.placeholder}
-    </ul>
-  </div>
-)}
-</Droppable>
-))}
+        </Droppable>
+      </div>
+
+      <div className="TableArea">
+        <div className="RoundTable">
+          {/* <Image src='./img/round_table.png' alt="Table" fluid style={{ maxWidth: '200px' }} /> */}
+          <svg width="693" height="635" viewBox="0 0 693 635" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="346.5" cy="317.5" rx="346.5" ry="317.5" fill="#492916"/>
+</svg>
+
+          <div className="ChairsAroundTable">
+            {dropZones.map((zone) => (
+              <Droppable key={zone.id} droppableId={zone.id}>
+                {(provided, snapshot) => (
+                  <div ref={provided.innerRef} {...provided.droppableProps}
+                    className={`chair ${snapshot.isDraggingOver ? "draggingOver" : ""}`}>
+                    <Image src='./img/armchair.png' alt="Chair" fluid style={{ maxWidth: '70px' }} />
+                    <ul className="drop">
+                      {zone.items.map((item, index) => (
+                        <Draggable key={item.id} draggableId={item.id} index={index}>
+                          {(provided, snapshot) => (
+                            <div className={`flex ${snapshot.isDragging ? "isDragging" : ""}`}
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}>
+                              <img src={item.thumb} alt="" />
+                              <h6>{item.name}</h6>
+                            </div>
+                          )}
+                        </Draggable>
+                      ))}
+                      {provided.placeholder}
+                    </ul>
+                  </div>
+                )}
+              </Droppable>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </DragDropContext>
 </div>
 
-
-
-)
-}
-
-</Droppable>
-
-    </div>
-
-
-
-
-       
-        </div>
-      </DragDropContext>
-    </div>
   );
 }
 
