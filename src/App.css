@@ -64,7 +64,7 @@
 .chair:nth-child(1) {
   top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-160%, 10%) rotate(-45deg);
 
 
 
@@ -74,7 +74,7 @@
 .chair:nth-child(2) {
   top: 50%;
   left: 100%;
-  transform: translate(-50%, -50%)   rotate( 90deg);
+  transform: translate(-140%, -110%)   rotate( 40deg);
 
 
 }
@@ -82,13 +82,13 @@
 .chair:nth-child(3) {
   top: 100%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(180deg);
+  transform: translate(40%, -100%) rotate(135deg);
 }
 
 .chair:nth-child(4) {
   top: 50%;
   left: 0;
-  transform: translate(-50%, -50%) rotate(270deg);
+  transform: translate(20%, 10%) rotate(220deg);
 }
 
 .chair img {
@@ -110,7 +110,7 @@
 
 
 svg{
-  width: 67px;
+  width: 120px;
   height: 200px;
 }
 
@@ -121,9 +121,12 @@ svg{
 .bsImg{
 
 
+
   width: 50px;
 }
 .TableArea{
+
+  background-color: #685169;
 
   display: flex;
 
@@ -135,13 +138,39 @@ svg{
 
   display: flex;
 
-  flex-direction: row;
+  flex-direction: column;
+ 
 
-  gap: 410px;
+
 }
 
 
+.FirstRow{
+
+  display: flex;
+
+  gap: 300px;
+}
+
+
+
+.SecondRow{
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.ThirdRow{
+
+  display: flex;
+
+  gap: 300px;
+}
+
 .Screen{
+
+
 
 border: solid 3px black;
 height: 100px;
@@ -149,7 +178,7 @@ width: 700px;
 
   position: relative;
 
-  bottom: 290px;
+  bottom: 143px;
 
 border-color: #000 #000 #000;
 border-top-left-radius: 100px;
@@ -159,4 +188,21 @@ border-top-width: 40px
 
 /* border-top-right-radius: 100px; */
 
+}
+
+.zoomable-content {
+  width:180vh;
+  height: 100vh;
+  border: 1px solid#685169;
+  background-color: #685169;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  justify-content: center;
+  /* overflow: hidden;  */
+}
+
+.TableGuestName{
+  color: aliceblue;
 }
